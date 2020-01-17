@@ -37,7 +37,8 @@ def cityreader(cities=[]):
             if line_count == 0:
                 print(f"Column names are {', '.join(row)}")
                 line_count += 1
-            cities.append(City(row["city"], row["lat"], row["lng"]))
+            cities.append(City(row["city"], float(
+                row["lat"]), float(row["lng"])))
             # print(f"{row['city'], row['lat'], row['lng']}")
             line_count += 1
         print(f"Processed {line_count} lines.")
